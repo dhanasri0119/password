@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #282c34;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #3c3f47;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.output {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#password {
+  flex: 1;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+#copyBtn {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.controls {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 8px 0;
+}
+
+#generateBtn {
+  background-color: #61dafb;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
