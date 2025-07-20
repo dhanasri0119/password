@@ -2,31 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Password Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h2>Password Generator</h2>
-
-    <div class="output">
-      <input type="text" id="password" readonly />
-      <button id="copyBtn">📋</button>
-    </div>
+    <h1>Password Generator</h1>
 
     <div class="controls">
-      <label>
-        Length:
-        <input type="number" id="length" min="4" max="32" value="12" />
+      <label>Password Length:
+        <input type="range" min="6" max="30" value="12" id="lengthRange">
+        <span id="lengthValue">12</span>
       </label>
-      <label><input type="checkbox" id="uppercase" checked /> Uppercase</label>
-      <label><input type="checkbox" id="lowercase" checked /> Lowercase</label>
-      <label><input type="checkbox" id="numbers" checked /> Numbers</label>
-      <label><input type="checkbox" id="symbols" /> Symbols</label>
+
+      <div class="options">
+        <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+        <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+        <label><input type="checkbox" id="numbers" checked> Numbers</label>
+        <label><input type="checkbox" id="symbols"> Symbols</label>
+      </div>
+
+      <button onclick="generatePassword()">Generate</button>
+      <button onclick="savePassword()">Save</button>
     </div>
 
-    <button id="generateBtn">Generate Password</button>
+    <input type="text" id="result" readonly>
+    <div id="strengthText"></div>
+    <div id="toast">Toast Message</div>
+
+    <hr>
+    <h3>Saved Passwords</h3>
+    <table id="savedTable">
+      <tr><th>Label</th><th>Password</th><th>Actions</th></tr>
+    </table>
   </div>
 
   <script src="script.js"></script>
